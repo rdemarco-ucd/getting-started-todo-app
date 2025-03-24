@@ -54,3 +54,38 @@ When you're done, simply remove the containers by running the following command:
 ```
 docker compose down
 ```
+
+## Build and push your first image
+Once you've updated the to-do list app, you're ready to create a container image for the application and share it on Docker Hub. To do so, you will need to do the following:
+1. Sign in with your Docker account
+2. Create an image repository on Docker Hub
+3. Build the container image
+4. Push the image to Docker Hub
+
+### Sign in with your Docker account
+1. Open Docker dashboard.
+2. Select Sign-in at the top-right corner
+3. If needed, create an account and then complete the sign-in flow.
+
+### Create an image reposigory
+Just as a Git repository holds source code, an image repository stores container images.
+1. Make sure you're signed into Docker Hub
+2. Select Create repository
+3. On the create repository page, enter the following information:
+    - Repository name - ```getting-started-todo-app```
+    - Short discription
+    - Visibility - select Public to allow others to pull your customized to-do app
+4. Select Create to create the repository
+
+### Build and push the image
+VS Code:
+1. Open VS Code and endure you have the Docker extention installed
+2. Clone the repository of the to-do application if you haven't already
+3. Right-click the ```Dockerfile``` and select the Build Image... menu item
+4. in the dialogue that appears, enter a name of ```DOCKER_USERNAME/getting-started-todo-app```, replacing with your Docker username
+5. After pressing Enter, you will see a terminal appear where the build will occur.
+6. Open the Docker Extension for VS Code by selecting the Docker logo in the left nav menu
+7. Find the image you created. It'll have the name of ```docker.io/DOCKER_USERNAME/getting-started-todo-app.```
+8. Expand the image to view the different tags (versions) of the image. The default tag given to an image is ```latest```.
+9. Right-click on the latest item and select the Push... option
+10. Press Enter to confirm and then watch as your image is pushed to Docker Hub.
